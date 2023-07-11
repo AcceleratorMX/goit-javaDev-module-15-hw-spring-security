@@ -21,4 +21,7 @@ public class Note {
 
     @Column
     private String content;
+
+    public Note(long l, String s) {
+    }
 }
