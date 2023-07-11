@@ -32,7 +32,8 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((auth) -> auth.anyRequest().authenticated())
-                .formLogin(form -> form
+                .formLogin(login -> login
+                        .permitAll()
                         .defaultSuccessUrl("/note/list", true)
                 )
                 .logout(LogoutConfigurer::permitAll);
